@@ -1,11 +1,16 @@
 import lightStickImg from "../images/lightstick.svg";
+import Footer from "../components/Footer";
 
 export default function CampingInfo() {
   return (
     <>
       <header id="camping-info-header">
-        <h1>Camping Info</h1>
-        <img id="camping-info-img" src={lightStickImg} alt="Vinyl"></img>
+        <h1 className="camping-info-headline">Camping Info</h1>
+        <img
+          id="camping-info-img"
+          src={lightStickImg}
+          alt="illustration of a lightstick"
+        ></img>
       </header>
       <main id="camping-info-main">
         <section id="camping-info-section">
@@ -62,6 +67,7 @@ export default function CampingInfo() {
           </div>
         </section>
       </main>
+      <Footer />
     </>
   );
 }

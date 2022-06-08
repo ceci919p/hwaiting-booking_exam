@@ -6,6 +6,7 @@ import { gsap } from "gsap";
 
 import Home from "./routes/Home";
 import CampingInfo from "./routes/CampingInfo";
+import ContactInfo from "./routes/Contact";
 import Booking from "./routes/Booking";
 import Confirmation from "./routes/Confirmation";
 
@@ -61,6 +62,19 @@ function App() {
                   <p className="link-p">CAMPING INFO</p>{" "}
                 </Link>
               </li>
+
+              <li>
+                <Link
+                  id="header_link"
+                  className="nav-link"
+                  to="/contact"
+                  onClick={ToggleBurgermenu}
+                >
+                  {" "}
+                  <p className="link-p">CONTACT US</p>{" "}
+                </Link>
+              </li>
+
               <li>
                 <Link
                   id="header_link"
@@ -85,6 +99,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="camping-info" element={<CampingInfo />} />
+          <Route path="contact" element={<ContactInfo />} />
 
           <Route path="booking/*" element={<Booking />} />
 

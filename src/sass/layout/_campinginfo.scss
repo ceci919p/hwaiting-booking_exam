@@ -6,12 +6,17 @@
   align-items: center;
   justify-content: center;
   min-height: 40vh;
-  border-top: 3px solid white;
+  /*   border-top: 3px solid white;
   border-bottom: 3px solid white;
-  box-shadow: 0px 0px 6px 4px white;
+  box-shadow: 0px 0px 6px 4px white; */
+  background-color: #e1d9e9;
   padding-block: 4rem;
   padding-inline: 1rem;
   margin-top: 2rem;
+
+  .camping-info-headline {
+    color: vars.$background-blue;
+  }
 
   h1 {
     font-family: vars.$displayfont;

@@ -1,19 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="315.242" height="390.346" viewBox="0 0 315.242 390.346">
-  <g id="c" transform="translate(165.105) rotate(28)">
-    <g id="Group_348" data-name="Group 348" transform="translate(2.5 2.5)">
-      <path id="Path_321" data-name="Path 321" d="M129.907,46.91c20.953,2.517,34.675,6.716,34.675,11.471,0,7.7-36.021,13.947-80.457,13.947S3.666,66.081,3.666,58.38c0-5.064,15.572-9.5,38.867-11.941" transform="translate(-1.604 31.28)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="3"/>
-      <path id="Path_322" data-name="Path 322" d="M167.541,82.2c0-44.016-36.947-79.7-82.521-79.7S2.5,38.182,2.5,82.2c0,34.948,27.7,62.6,55.975,88.052a5.4,5.4,0,0,1,1.788,4.013V341.211c0,4.4,11.083,7.97,24.756,7.97s24.756-3.568,24.756-7.97V174.156a5.42,5.42,0,0,1,1.657-3.9c28.32-27.3,56.108-53.058,56.108-88.061Z" transform="translate(-2.5 -2.5)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="5"/>
-      <path id="Path_323" data-name="Path 323" d="M35.157,124.389l5.745.978a112.46,112.46,0,0,0,37.065.119l6.7-1.1" transform="translate(22.606 91.206)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="3"/>
-      <line id="Line_335" data-name="Line 335" y1="66.823" transform="translate(72.754 245.806)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="3"/>
-      <g id="Group_347" data-name="Group 347" transform="translate(25.575 26.967)">
-        <g id="Group_346" data-name="Group 346" transform="translate(0 0)">
-          <path id="Path_324" data-name="Path 324" d="M40.03,22.36,89,44.123,105.32,74.049l1.94,2.72,6.221-8.161" transform="translate(0.778 -14.199)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
-          <path id="Path_325" data-name="Path 325" d="M16.959,72.156l8.161,8.161L63.208,17.746" transform="translate(-16.959 -17.746)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
-          <path id="Path_326" data-name="Path 326" d="M75.04,72.156,69.6,80.317,36.954,17.746" transform="translate(-1.587 -17.746)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
-          <path id="Path_327" data-name="Path 327" d="M21.573,53.121H121.45" transform="translate(-13.412 9.45)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
-        </g>
-        <path id="Path_328" data-name="Path 328" d="M26.727,66.477h0A78.443,78.443,0,0,0,43.189,43.918c.3-.617.584-1.2.849-1.728l3.8-7.6a1.1,1.1,0,0,1,1.988.058l1.748,4.079c3.251,7.588,2.9,10.742,10.544,21.027a36.322,36.322,0,0,0,6.514,6.727Z" transform="translate(-9.449 -5.266)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="3"/>
-      </g>
-    </g>
-  </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.3.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 315.2 390.3" style="enable-background:new 0 0 315.2 390.3;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#120A2D;stroke-width:5;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#120A2D;stroke-width:5;stroke-linecap:round;stroke-miterlimit:10;}
+</style>
+<g id="c" transform="translate(165.105) rotate(28)">
+	<g id="Group_348" transform="translate(2.5 2.5)">
+		<path id="Path_321" class="st0" d="M128.3,78.2c21,2.5,34.7,6.7,34.7,11.5c0,7.7-36,13.9-80.5,13.9S2.1,97.4,2.1,89.7
+			c0-5.1,15.6-9.5,38.9-11.9"/>
+		<path id="Path_322" class="st0" d="M165,79.7C165,35.7,128.1,0,82.5,0S0,35.7,0,79.7c0,34.9,27.7,62.6,56,88.1
+			c1.1,1,1.8,2.5,1.8,4l0,166.9c0,4.4,11.1,8,24.8,8s24.8-3.6,24.8-8l0-167.1c0-1.5,0.6-2.9,1.7-3.9C137.3,140.5,165,114.7,165,79.7
+			L165,79.7z"/>
+		<path id="Path_323" class="st0" d="M57.8,215.6l5.7,1c12.3,2.1,24.8,2.1,37.1,0.1l6.7-1.1"/>
+		<line id="Line_335" class="st0" x1="72.8" y1="312.6" x2="72.8" y2="245.8"/>
+		<g id="Group_347" transform="translate(25.575 26.967)">
+			<g id="Group_346" transform="translate(0 0)">
+				<path id="Path_324" class="st1" d="M40.8,8.2l49,21.8l16.3,29.9l1.9,2.7l6.2-8.2"/>
+				<path id="Path_325" class="st1" d="M0,54.4l8.2,8.2L46.2,0"/>
+				<path id="Path_326" class="st1" d="M73.5,54.4L68,62.6L35.4,0"/>
+				<path id="Path_327" class="st1" d="M8.2,62.6l99.9,0"/>
+			</g>
+			<path id="Path_328" class="st0" d="M17.3,61.2L17.3,61.2c6.8-6.5,12.4-14.1,16.5-22.6c0.3-0.6,0.6-1.2,0.8-1.7l3.8-7.6
+				c0.3-0.5,0.9-0.8,1.5-0.5c0.2,0.1,0.4,0.3,0.5,0.5l1.7,4.1c3.3,7.6,2.9,10.7,10.5,21c1.9,2.5,4.1,4.8,6.5,6.7L17.3,61.2z"/>
+		</g>
+	</g>
+</g>
 </svg>

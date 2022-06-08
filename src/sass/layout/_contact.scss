@@ -1,0 +1,60 @@
+@use "../abstracts/vars";
+@use "../abstracts/mixins";
+
+#contact-info-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vh;
+  /*   border-top: 3px solid white;
+  border-bottom: 3px solid white;
+  box-shadow: 0px 0px 6px 4px white; */
+  background-color: #e1d9e9;
+  padding-block: 4rem;
+  padding-inline: 1rem;
+  margin-top: 2rem;
+
+  #contact-info-headline {
+    color: vars.$background-blue;
+  }
+
+  h1 {
+    font-family: vars.$displayfont;
+  }
+
+  #contact-info-img {
+    max-height: 12rem;
+    max-width: 10rem;
+  }
+}
+
+#contact-main {
+  margin-block: 1rem 8rem;
+  margin-inline: 1rem;
+}
+
+#contact-info-section {
+  margin-block: 6rem 4rem;
+  margin-inline: 1rem;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+}
+
+#contact-options {
+  @include mixins.bp-medium {
+    padding-block: 5rem;
+    padding-inline: 2rem;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1000px) auto;
+  }
+}
+
+#contact-options-wrapper {
+  grid-column: 2/3;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
