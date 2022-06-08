@@ -55,6 +55,49 @@
       padding: 6rem 0rem 10px 0rem;
     }
   }
+
+  #home-info {
+    background-color: #e1d9e9;
+    padding-block: 3rem;
+    padding-inline: 1rem;
+    margin-block: 2rem;
+
+    @include mixins.bp-large {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1200px) auto;
+    }
+  }
+
+  .dark-text {
+    color: vars.$background-blue;
+  }
+
+  .home-info-container {
+    grid-column: 2/3;
+
+    @include mixins.bp-large {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+    }
+  }
+
+  .home-info-img {
+    @include mixins.bp-large {
+      max-width: 40vw;
+      margin-inline: auto;
+      margin-block: auto;
+    }
+  }
+
+  .home-info-graphics {
+    text-align: center;
+
+    @include mixins.bp-large {
+      margin-block: auto;
+    }
+  }
+
   #highlights {
     background-color: vars.$background-blue;
   }
