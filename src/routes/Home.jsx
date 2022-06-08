@@ -21,22 +21,25 @@ export default function Home(props) {
             <h1 id="glow-h1">HWAITING</h1>
             <p>Scandinavias biggest K-pop festival!</p>
           </div>
-          <Link to="/booking">
-            <button id="home-buylink">
-              <p className="link-p">Buy Tickets</p>
-            </button>
-          </Link>
 
-          <a
-            id="home-artistlink"
-            href="https://hwaiting.pandapoob.com/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <button id="home-artistbutton">
-              <p className="link-p">See Program</p>
-            </button>
-          </a>
+          <div className="header-link-wrapper">
+            <a
+              id="home-artistlink"
+              href="https://hwaiting.pandapoob.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <button id="home-artistbutton">
+                <p className="link-p">See Program</p>
+              </button>
+            </a>
+
+            <Link to="/booking">
+              <button id="home-buylink">
+                <p className="link-p">Buy Tickets</p>
+              </button>
+            </Link>
+          </div>
         </section>
         <section id="home-divider">
           <p>화이팅</p> <p>HWAITING</p> <p>화이팅</p> <p>HWAITING</p>{" "}
@@ -92,7 +95,6 @@ export default function Home(props) {
             <img id="home-program-img" src={vinylImg} alt="Vinyl"></img>
           </a>
         </section>
-
         <Footer />
       </main>
     </>

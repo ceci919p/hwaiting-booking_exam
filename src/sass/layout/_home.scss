@@ -7,46 +7,11 @@
   left: 0;
   right: 0;
   z-index: -1;
+
+  //typography
   h1 {
     text-shadow: 0px 0px 22px vars.$lightneonpurple;
     font-family: vars.$displayfont;
-  }
-  .heading-wrapper {
-    margin: 1rem 0rem 3rem 0rem;
-    gap: 7px;
-    display: flex;
-    flex-direction: column;
-  }
-  #background {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 2rem;
-    height: 100%;
-    background-size: cover;
-    padding: 10rem 1rem 8rem 1rem;
-    @include mixins.bp-medium {
-      padding: 4rem 4rem 8rem 4rem;
-      height: 100vh;
-    }
-    text-align: center;
-  }
-  button {
-    border-radius: 5px;
-
-    width: 50vw;
-    padding-block: 0.7rem;
-    padding-inline: 1rem;
-
-    @include mixins.bp-medium {
-      padding: 0.5rem 1.5rem 0.5rem 1.5rem;
-      max-width: 17vw;
-    }
-  }
-
-  button:hover {
-    cursor: pointer;
-    box-shadow: 0px 0px 22px vars.$lightneonpink;
   }
 
   h2 {
@@ -57,20 +22,141 @@
     }
   }
 
-  #home-info {
-    background-color: #e1d9e9;
-    padding-block: 3rem;
-    padding-inline: 1rem;
-    margin-block: 2rem;
+  .heading-wrapper {
+    margin: 1rem 0rem 3rem 0rem;
+    gap: 7px;
+    display: flex;
+    flex-direction: column;
+  }
 
-    @include mixins.bp-large {
-      display: grid;
-      grid-template-columns: auto minmax(0, 1200px) auto;
+  #background {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    height: 100%;
+    background-size: cover;
+    padding: 10rem 2rem 5rem 2rem;
+    text-align: center;
+
+    /*   display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    height: 100%;
+    background-size: cover;
+    padding: 10rem 1rem 8rem 1rem;
+    text-align: center; */
+
+    @include mixins.bp-medium {
+      padding: 4rem 4rem 8rem 4rem;
+      height: 100vh;
     }
   }
 
+  //header cta buttons
+
+  #home-buylink,
+  #home-artistbutton {
+    width: 100%;
+
+    border-radius: 2px;
+    cursor: pointer;
+
+    min-width: 10rem;
+    padding-block: 0.8rem;
+    padding-inline: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    p {
+      font-size: 1rem;
+
+      @include mixins.bp-medium {
+        font-size: 1.2rem;
+      }
+    }
+
+    @include mixins.bp-medium {
+      font-size: 1.2rem;
+      padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+      max-width: 17vw;
+    }
+  }
+
+  //cta different colors
+
+  #home-buylink {
+    background-color: vars.$neonpink;
+    box-shadow: 0px 0px 10px vars.$lightneonpink;
+  }
+
+  #home-artistbutton {
+    box-shadow: 0px 0px 10px vars.$lightneonpurple;
+  }
+
+  //cta hover effects
+
+  #home-buylink:hover,
+  #home-artistbutton:hover {
+    transform: scale(1.2);
+  }
+
+  .home-artistbutton:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 22px vars.$lightneonpurple;
+  }
+
+  .home-buylink:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 22px vars.$lightneonpink;
+  }
+
+  //cta buttons alignment
+
+  .header-link-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @include mixins.bp-medium {
+      flex-direction: unset;
+      gap: 2rem;
+      justify-content: center;
+    }
+  }
+
+  //banner
+
+  #home-divider {
+    border: 2px solid white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 0px 12px white;
+  }
+
+  //info section
+
   .dark-text {
     color: vars.$background-blue;
+  }
+
+  #home-info {
+    background-color: #e1d9e9;
+    padding-block: 3rem;
+    padding-inline: 2rem;
+    margin-block: 2rem;
+
+    @include mixins.bp-medium {
+      padding-inline: 4rem;
+    }
+
+    @include mixins.bp-large {
+      padding-block: 5rem;
+      padding-inline: 2rem;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1200px) auto;
+    }
   }
 
   .home-info-container {
@@ -105,48 +191,10 @@
   #highlights {
     background-color: vars.$background-blue;
   }
-  #home-buylink {
-    background-color: vars.$neonpink;
-    box-shadow: 0px 0px 10px vars.$lightneonpink;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    p {
-      font-size: 1rem;
-
-      @include mixins.bp-medium {
-        font-size: 1.2rem;
-      }
-    }
-  }
-  #home-buylink:hover {
-    transform: scale(1.05);
-  }
-
-  #home-artistbutton {
-    box-shadow: 0px 0px 10px vars.$lightneonpurple;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    p {
-      font-size: 1rem;
-
-      @include mixins.bp-medium {
-        font-size: 1.2rem;
-      }
-    }
-  }
-
-  #home-artistbutton:hover {
-    transform: scale(1.05);
-  }
 }
 
-#home-divider {
-  border: 2px solid white;
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  box-shadow: 0px 0px 12px white;
-}
+//link to programme section
+
 #home-program-section {
   margin-block: 1rem 8rem;
   display: grid;
@@ -181,6 +229,91 @@
   }
 }
 
+//footer
+
 footer {
-  background-color: white;
+  border-top: 3px solid white;
+  background-color: vars.$background-blue;
+  padding-block: 1rem 1rem;
+  display: grid;
+  justify-content: center;
+
+  @include mixins.bp-medium {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 2rem;
+    padding-block: 1.5rem;
+  }
+
+  @include mixins.bp-large {
+    padding-inline: 5rem;
+  }
+
+  .footer-contact {
+    margin-block-end: 2.5rem;
+    margin-block-start: 0.5rem;
+
+    @include mixins.bp-medium {
+      margin-block-end: 0;
+    }
+  }
+
+  .contact-column {
+    text-align: center;
+  }
+
+  #footer-socials {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .footer-wrapper {
+    text-align: center;
+  }
+
+  .footer-social-wrapper {
+    border-radius: 100%;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 2px;
+    margin-block-start: 1rem;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .footer-social-wrapper:hover {
+    transform: scale(1.1);
+  }
+
+  .footer-social {
+    width: 2.5rem;
+    cursor: pointer;
+  }
+
+  //footer hover colors
+
+  #footer-twitter {
+    &:hover {
+      box-shadow: 0px 0px 16px #00ddff;
+    }
+  }
+
+  #footer-ig {
+    &:hover {
+      box-shadow: 0px 0px 16px #9900ff;
+    }
+  }
+
+  #footer-yt {
+    &:hover {
+      box-shadow: 0px 0px 16px #ff0000;
+    }
+  }
+
+  #footer-fb {
+    &:hover {
+      box-shadow: 0px 0px 16px rgb(35, 57, 255);
+    }
+  }
 }
