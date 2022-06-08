@@ -82,18 +82,21 @@
     }
   }
 
-  .home-info-img {
+  .home-info-graphics {
+    text-align: center;
+
+    margin-block: 3rem;
+    margin-block-start: 5rem;
+
     @include mixins.bp-large {
-      max-width: 40vw;
-      margin-inline: auto;
       margin-block: auto;
     }
   }
 
-  .home-info-graphics {
-    text-align: center;
-
+  .home-info-img {
     @include mixins.bp-large {
+      max-width: 40vw;
+      margin-inline: auto;
       margin-block: auto;
     }
   }
