@@ -19,6 +19,17 @@ export default function Home(props) {
             <p className="link-p">Buy Tickets</p>
           </button>
         </Link>
+
+        <a
+          id="home-artistlink"
+          href="https://hwaiting.pandapoob.com/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <button id="home-artistbutton">
+            <p className="link-p">See Program</p>
+          </button>
+        </a>
       </section>
       <section id="home-divider">
         <p>화이팅</p> <p>HWAITING</p> <p>화이팅</p> <p>HWAITING</p>{" "}
