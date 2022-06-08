@@ -1,0 +1,92 @@
+@use "../abstracts/vars";
+@use "../abstracts/mixins";
+
+#campingspots {
+  margin-inline: 3rem;
+
+  h3 {
+    font-family: vars.$displayfont;
+  }
+
+  .map {
+    @include mixins.bp-large {
+      display: grid;
+      grid-template-columns: auto minmax(0, 700px) auto;
+    }
+  }
+
+  .campingspots-container {
+    @include mixins.bp-large {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-block: 3rem;
+    }
+  }
+
+  .campingspots-wrapper {
+    @include mixins.bp-large {
+      grid-column: 2/3;
+    }
+  }
+
+  .campingspot {
+    position: relative;
+    top: 0;
+    margin-block: 2rem;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.1s ease-out;
+    @include mixins.bp-large {
+      margin: 0;
+    }
+  }
+  .campingspot:hover {
+    top: -2px;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+  }
+  .back-step {
+    max-width: 5rem;
+    border-radius: 5px;
+    padding: 8px;
+    background-color: vars.$neonpurple;
+    margin-block: 2rem;
+  }
+  #back-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  #arrowleft {
+    font-size: 1.5rem;
+  }
+  #spot-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+  #cs-next {
+    text-align: center;
+    margin-block: 2rem;
+
+    background-color: vars.$neonpurple;
+    //box-shadow: 0px 0px 10px white;
+    max-width: 5rem;
+    border-radius: 5px;
+    padding: 8px;
+    cursor: pointer;
+  }
+}
+
+#cs-link-text {
+  text-align: center;
+  font-size: 1rem;
+}
+
+#cs-link {
+  text-decoration: underline;
+  font-size: 1rem;
+}

@@ -1,0 +1,68 @@
+@use "../abstracts/vars";
+@use "../abstracts/mixins";
+
+#tickets {
+  margin-inline: 1.5rem;
+
+  .ticket {
+    padding: 1rem;
+    margin-inline: 1rem;
+    margin-block: 2rem;
+    border-radius: 5px;
+    height: 30vh;
+    cursor: pointer;
+    position: relative;
+    top: 0;
+    cursor: pointer;
+    transition: all 0.1s ease-out;
+
+    @include mixins.bp-large {
+      min-width: 19vw;
+      /*   height: 45vh; */
+    }
+  }
+  .ticket:hover {
+    top: -2px;
+  }
+
+  .ticket-container {
+    @include mixins.bp-large {
+      display: grid;
+      grid-template-columns: auto minmax(0, 700px) auto;
+
+      margin: 3rem;
+    }
+
+    .ticket-wrapper {
+      @include mixins.bp-large {
+        grid-column: 2/3;
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+      }
+    }
+
+    .add {
+      background-color: transparent;
+      font-size: 2rem;
+      padding: 0;
+      margin-block-start: 0;
+    }
+
+    hr {
+      margin-block: 1rem;
+      width: 10rem;
+      margin-inline: auto;
+    }
+
+    .ticket-text {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      justify-content: space-evenly;
+      gap: 1rem;
+      margin-block: 1rem;
+      margin-inline: 1rem;
+    }
+  }
+}

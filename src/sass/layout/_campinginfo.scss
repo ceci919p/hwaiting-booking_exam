@@ -1,0 +1,84 @@
+@use "../abstracts/vars";
+@use "../abstracts/mixins";
+
+#camping-info-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vh;
+  border-top: 3px solid white;
+  border-bottom: 3px solid white;
+  box-shadow: 0px 0px 6px 4px white;
+  padding-block: 4rem;
+  padding-inline: 1rem;
+  margin-top: 2rem;
+
+  h1 {
+    font-family: vars.$displayfont;
+  }
+
+  #camping-info-img {
+    max-width: 10rem;
+  }
+}
+
+#camping-info-main {
+  margin-block: 1rem 8rem;
+  margin-inline: 1rem;
+}
+
+#camping-info-section {
+  margin-block: 6rem 4rem;
+  margin-inline: 1rem;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+}
+
+#camping-info-list {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+  margin-inline: auto;
+}
+
+.camping-info-spot {
+  max-width: 24rem;
+  padding: 1rem;
+
+  h3 {
+    margin-block: 1rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+}
+
+#nilfheim-spot {
+  border: 5px solid vars.$neonblue;
+  box-shadow: 0px 0px 6px 2px vars.$lightneonblue;
+}
+
+#hellheim-spot {
+  border: 5px solid vars.$neonred;
+  box-shadow: 0px 0px 6px 2px vars.$lightneonred;
+}
+
+#alfheim-spot {
+  border: 5px solid vars.$neongreen;
+  box-shadow: 0px 0px 6px 2px vars.$lightneongreen;
+}
+
+#svartheim-spot {
+  border: 5px solid vars.$neonpurple;
+  box-shadow: 0px 0px 6px 2px vars.$lightneonpurple;
+}
+
+#muspelheim-spot {
+  border: 5px solid vars.$neonpink;
+  box-shadow: 0px 0px 6px 2px vars.$lightneonpink;
+}

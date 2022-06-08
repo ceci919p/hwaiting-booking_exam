@@ -1,0 +1,116 @@
+@use "../abstracts/vars";
+@use "../abstracts/mixins";
+
+#home {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  h1 {
+    text-shadow: 0px 0px 22px vars.$lightneonpurple;
+    font-family: vars.$displayfont;
+  }
+  .heading-wrapper {
+    margin: 1rem 0rem 3rem 0rem;
+    gap: 7px;
+    display: flex;
+    flex-direction: column;
+  }
+  #background {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    height: 100%;
+    background-size: cover;
+    padding: 10rem 1rem 8rem 1rem;
+    @include mixins.bp-medium {
+      padding: 4rem 4rem 8rem 4rem;
+      height: 100vh;
+    }
+    text-align: center;
+  }
+  button {
+    //background-color: rgba(255, 255, 255, 0);
+    background-color: vars.$neonpink;
+    border-radius: 5px;
+    //border: 5px solid vars.$neonblue;
+    box-shadow: 0px 0px 10px vars.$lightneonpink;
+    padding: 4px 8px 4px 8px;
+    @include mixins.bp-medium {
+      padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+    }
+  }
+
+  button:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 22px vars.$lightneonpink;
+  }
+
+  h2 {
+    text-align: center;
+    padding: 3rem 0rem 10px 0rem;
+    @include mixins.bp-medium {
+      padding: 6rem 0rem 10px 0rem;
+    }
+  }
+  #highlights {
+    background-color: vars.$background-blue;
+  }
+  #home-buylink {
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    p {
+      font-size: 1rem;
+
+      @include mixins.bp-medium {
+        font-size: 1.2rem;
+      }
+    }
+  }
+  #home-buylink:hover {
+    transform: scale(1.05);
+  }
+}
+
+#home-divider {
+  border: 2px solid white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 0px 12px white;
+}
+#home-program-section {
+  margin-block: 1rem 8rem;
+  display: grid;
+}
+
+#home-program-text {
+  text-align: center;
+}
+
+#home-program-link {
+  border-radius: 100%;
+  display: inline-block;
+  width: 12rem;
+  margin-inline: auto;
+}
+
+#home-program-img {
+  margin-top: 3rem;
+  max-width: 12rem;
+  margin-inline: auto;
+  border-radius: 100%;
+  box-shadow: 0px 0px 10px vars.$lightneonpink;
+  transition: transform 0.7s ease-in-out;
+  -webkit-transition: 0.7s ease-in-out;
+  @include mixins.bp-medium {
+    margin-top: 5rem;
+  }
+
+  &:hover {
+    box-shadow: 0px 0px 22px vars.$lightneonpink;
+    transform: rotate(360deg);
+  }
+}

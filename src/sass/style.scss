@@ -1,0 +1,116 @@
+@use "layout";
+@use "base";
+@use "./abstracts/vars";
+@use "./abstracts/mixins";
+
+.removing {
+  transition: all 1.5s;
+  transform: translateX(500px);
+}
+
+body {
+  background-color: vars.$background-blue;
+}
+.black-text {
+  color: vars.$background-blue;
+}
+.pm_font {
+  font-family: "Permanent Marker", sans-serif;
+}
+.App {
+  #logo_wrapper {
+    margin: 1rem;
+    z-index: 1;
+    height: auto;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  .logo:hover {
+    transform: scale(1.06);
+  }
+  .logo {
+    width: 3.5rem;
+    transition: 0.2s ease-out;
+  }
+  #navigation {
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
+      flex-direction: column;
+    }
+
+    li {
+      list-style: none;
+      transition: 0.2s ease-out;
+    }
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    .inactive {
+      display: none;
+    }
+    #burgermenu {
+      display: block;
+      cursor: pointer;
+      position: fixed;
+      right: 1rem;
+      top: 1.5rem;
+      z-index: 2;
+    }
+    #bar1,
+    #bar2,
+    #bar3 {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 5px auto;
+      --webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      background-color: white;
+    }
+
+    .active1 {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .active2 {
+      opacity: 0;
+    }
+    .active3 {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+
+    #menu {
+      position: fixed;
+      z-index: 2;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      height: 100vh;
+      background-color: vars.$background-blue;
+      padding: 10rem 3rem 3rem 3rem;
+      text-align: center;
+      transition: ease-out;
+
+      ul {
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      li:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

@@ -1,0 +1,70 @@
+@use "../abstracts/vars";
+@use "../abstracts/mixins";
+
+h1 {
+  font-family: vars.$displayfont;
+  font-weight: 800;
+  font-size: 3rem;
+
+  color: white;
+  @include mixins.bp-medium {
+    font-size: 6rem;
+  }
+
+  //color: vars.$secondary;
+}
+
+h2 {
+  font-family: vars.$paragraphfont;
+  font-weight: 800;
+  font-size: 2rem;
+  @include mixins.bp-medium {
+    font-size: 3rem;
+  }
+  color: white;
+}
+
+h3 {
+  font-family: vars.$paragraphfont;
+  font-size: 1.5rem;
+  @include mixins.bp-medium {
+    font-size: 1.8rem;
+  }
+  color: white;
+}
+
+h4 {
+  font-family: vars.$paragraphfont;
+  font-size: 1.2rem;
+
+  color: white;
+  // color: vars.$secondary;
+}
+
+p {
+  font-family: vars.$paragraphfont;
+  font-size: 1rem;
+  @include mixins.bp-medium {
+    font-size: 1.3rem;
+  }
+  line-height: 1.8rem;
+  color: white;
+  //  color: vars.$secondary;
+}
+.link-p {
+  font-family: vars.$paragraphfont;
+  font-weight: 700;
+  font-size: 1.2rem;
+
+  text-decoration: none;
+  color: white;
+  //text-shadow: 4px 4px black;
+}
+
+a {
+  font-family: vars.$paragraphfont;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: white;
+  //text-shadow: 4px 4px black;
+}

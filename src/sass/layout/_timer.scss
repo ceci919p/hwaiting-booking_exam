@@ -1,0 +1,43 @@
+@use "../abstracts/vars";
+@use "../abstracts/mixins";
+
+.hidden {
+  visibility: hidden;
+}
+#popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(18, 10, 45, 0.712);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.dialog {
+  box-shadow: 1px 1px 10px #333;
+  border-radius: 12px;
+  padding: 2em;
+  background-color: white;
+  position: relative;
+  width: 85%;
+
+  @include mixins.bp-medium {
+    width: 65%;
+  }
+
+  @include mixins.bp-large {
+    width: 40%;
+  }
+}
+button {
+  border: none;
+  background-color: vars.$neonpurple;
+  color: white;
+  border-radius: 5px;
+  //box-shadow: 0px 0px 22px vars.$lightneonpurple;
+  padding: 8px;
+  margin-block-start: 1rem;
+}

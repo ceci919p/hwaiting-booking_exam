@@ -1,0 +1,66 @@
+@use "../abstracts/vars";
+@use "../abstracts/mixins";
+
+#confirmation {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1000px) auto;
+  place-content: center;
+  margin-inline: 1rem;
+  .heading-wrapper {
+    margin: 2rem 0rem 2rem 0rem;
+    text-align: center;
+  }
+  .finished-step {
+    text-align: center;
+    margin-block: 2rem;
+    margin-inline: auto;
+    background-color: vars.$neonpurple;
+    max-width: 10rem;
+    border-radius: 5px;
+    padding: 8px;
+    cursor: pointer;
+    @include mixins.bp-large {
+      margin-block: 2rem;
+    }
+  }
+}
+#confirmation-wrapper {
+  grid-column: 2/3;
+  place-content: center;
+  max-width: 800px;
+  margin-inline: auto;
+}
+#background-color {
+  background-color: #e1d9e9;
+  padding: 2rem;
+  border-radius: 5px;
+  h3 {
+    color: black;
+    text-align: center;
+    margin: 1rem 1rem 3rem 1rem;
+  }
+  li {
+    display: flex;
+    justify-content: space-between;
+    margin-block: 2rem;
+    padding: 1rem 2rem 1rem 2rem;
+  }
+  .amount-type-wrapper {
+    display: flex;
+    gap: 1rem;
+  }
+  .amount-container {
+    display: flex;
+    gap: 5px;
+  }
+  .totalprice {
+    display: flex;
+    justify-content: space-between;
+    margin-block: 2rem;
+    padding: 1rem 2rem 1rem 2rem;
+  }
+
+  p {
+    color: black;
+  }
+}

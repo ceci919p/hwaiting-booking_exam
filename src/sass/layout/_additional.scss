@@ -1,0 +1,148 @@
+@use "../abstracts/vars";
+@use "../abstracts/mixins";
+
+#additional {
+  margin-inline: 3rem;
+
+  @include mixins.bp-large {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1000px) auto;
+  }
+
+  div {
+    grid-column: 2/3;
+  }
+
+  h3,
+  h4 {
+    margin: 1rem;
+  }
+
+  h3 {
+    margin-inline: 0;
+  }
+
+  .tents-headline {
+    margin-block: 0;
+  }
+
+  .add {
+    background-color: transparent;
+    font-size: 2rem;
+    padding: 0;
+    margin-block-start: 0;
+  }
+
+  .green-price {
+    text-align: end;
+
+    margin-block-start: 1rem;
+    margin: 1rem;
+    margin-block-start: 0;
+  }
+
+  .green-price > p {
+    font-size: 1.7rem;
+  }
+
+  .price,
+  .green-price {
+    font-weight: bold;
+  }
+
+  .prepared-tents {
+    margin-block-end: 3rem;
+
+    @include mixins.bp-large {
+      margin-block-end: 0;
+    }
+  }
+
+  .options-wrapper {
+    margin-block-start: 2rem;
+    margin-block-end: 2rem;
+    @include mixins.bp-large {
+      display: grid;
+      grid-template-columns: 0.7fr 1fr;
+      /*  justify-items: center; */
+      gap: 5rem;
+    }
+  }
+
+  .tents-container {
+    margin-block: 2rem;
+  }
+
+  .tent-option,
+  .go-green-container {
+    /*     margin-block: 1rem; */
+    padding: 1rem;
+    border-radius: 5px;
+
+    @include mixins.bp-large {
+      /*      margin-inline: 1rem; */
+      padding: 0.5rem;
+    }
+  }
+
+  .tent-option {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    border-radius: 5px;
+    width: 100%;
+    position: relative;
+    top: 0;
+    cursor: pointer;
+    transition: all 0.1s ease-out;
+  }
+  .tent-option:hover,
+  .go-green-container:hover {
+    top: -2px;
+  }
+
+  .product-and-button {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .product-and-button,
+  .price {
+    margin: 1rem;
+  }
+
+  .go-green {
+    @include mixins.bp-large {
+      grid-column: 2/3;
+    }
+  }
+
+  .go-green-container {
+    border: 5px solid vars.$neongreen;
+    box-shadow: vars.$lightneongreen 0px 0px 10px;
+    margin-block-start: 1.5rem;
+    position: relative;
+    top: 0;
+    cursor: pointer;
+    transition: all 0.1s ease-out;
+  }
+
+  .go-green-text,
+  .go-green-header {
+    margin-left: 2rem;
+    margin-right: 1rem;
+  }
+
+  .go-green-header {
+    margin-block-start: 0;
+  }
+
+  .go-green-text {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+  }
+  #extrapadding {
+    padding: 9px 17px 9px 17px;
+    display: block;
+  }
+}
