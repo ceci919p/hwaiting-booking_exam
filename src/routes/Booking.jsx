@@ -24,6 +24,8 @@ export default function Booking() {
 
   // console.log(reservationData);
 
+  //our tickets this is the data we use to display it on the bookingpage
+
   const tickets = [
     {
       id: 1,
@@ -38,6 +40,8 @@ export default function Booking() {
       productType: "ticket",
     },
   ];
+
+  //our additionals - like tickets we use this data to pass it to relevant functions and display it on the DOM
 
   const additionals = [
     {
@@ -56,6 +60,9 @@ export default function Booking() {
     },
   ];
 
+  //gogreen is on its own since it has a boolean value and because it cannot be added more than once. It simply
+  //works a little different compared to our additionals array which holds our prepared tents
+
   const gogreen = {
     type: "Go Green",
     productType: "gogreen",
@@ -66,23 +73,35 @@ export default function Booking() {
 
   useEffect(
     () => {
-      //use effect gør at den kun kalder en enkelt gang, ellers ville den loope, da man ville kalde funktionen getproducts data(array) ville ændre sig og derved kalde setproducts igen
+      //use effect to only call it once, otherwise it would loop because when you call the function getCampingData, it would change and trigger setProducts once again (infinite loop)
+
+      //getCampingData fetches data from the URL
       async function getCampingData() {
         const res = await fetch(
           "https://hwaiting.herokuapp.com/available-spots"
         );
         const data = await res.json();
 
+        //maps through each json data and gives it a price and a productType
+        //this modified data is now called fullCampingData
+
         let fullCampingData = data.map((b) => {
           b.price = 99;
           b.productType = "camping";
           return b;
         });
+
+        //we now update the current state with the modified data as a parameter (which is the new state)
         setCampingData(fullCampingData);
+
+        //availableArr destruturing each fullCampingData's object attributes and using the object's rest operator
+        //which inits an object called rest with all of the object attributes minus the ones specified before ("available" in this case)
 
         let availableArr = fullCampingData.map(({ available, ...rest }) => {
           return available;
         });
+
+        //WHAT DOES THIS DO???
         let ticketNumber = 0;
         for (let i = 0; i < availableArr.length; i++) {
           ticketNumber += availableArr[i];

@@ -5,6 +5,7 @@ import { ArrowLeftOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 
 export default function CampingInfo() {
+  //useNavigate to be able to make a nextbutton sending you to your last visited URL
   const navigate = useNavigate();
 
   return (
