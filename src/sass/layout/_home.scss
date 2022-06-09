@@ -8,6 +8,8 @@
   right: 0;
   z-index: -1;
 
+  /* margin-bottom: 100px; */
+
   //typography
   h1 {
     text-shadow: 0px 0px 22px vars.$lightneonpurple;
@@ -237,6 +239,14 @@ footer {
   padding-block: 1rem 1rem;
   display: grid;
   justify-content: center;
+
+  /* width: 100%;
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 110;
+  margin-top: 100px; */
 
   @include mixins.bp-medium {
     display: flex;

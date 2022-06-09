@@ -5,7 +5,7 @@ export default function Contact() {
   return (
     <>
       <header id="contact-info-header">
-        <h1 id="contact-info-headline">Hwaiting Support</h1>
+        <h1 id="contact-info-headline">Support</h1>
         <img
           id="contact-info-img"
           src={kheart}
