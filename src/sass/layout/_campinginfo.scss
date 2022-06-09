@@ -27,14 +27,39 @@
   }
 }
 
+#camping-info-back {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  gap: 1rem;
+
+  padding-inline: 1rem;
+  cursor: pointer;
+
+  @include mixins.bp-large {
+    margin-left: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 0;
+  }
+
+  p,
+  #arrowleft {
+    font-size: 1.2rem;
+  }
+}
+
 #camping-info-main {
   margin-block: 1rem 8rem;
   margin-inline: 1rem;
 }
 
 #camping-info-section {
-  margin-block: 6rem 4rem;
+  margin-block: 4rem 4rem;
   margin-inline: 1rem;
+
+  @include mixins.bp-large {
+    margin-block-start: 3rem;
+  }
 
   h2 {
     text-align: center;

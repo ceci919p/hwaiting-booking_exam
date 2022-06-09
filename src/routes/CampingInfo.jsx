@@ -1,11 +1,16 @@
 import lightStickImg from "../images/lightstick.svg";
 import Footer from "../components/Footer";
+import { ArrowLeftOutlined } from "@ant-design/icons";
+
+import { useNavigate } from "react-router-dom";
 
 export default function CampingInfo() {
+  const navigate = useNavigate();
+
   return (
     <>
       <header id="camping-info-header">
-        <h1 className="camping-info-headline">Camping Info</h1>
+        <h1 className="camping-info-headline">Camping</h1>
         <img
           id="camping-info-img"
           src={lightStickImg}
@@ -13,6 +18,10 @@ export default function CampingInfo() {
         ></img>
       </header>
       <main id="camping-info-main">
+        <button id="camping-info-back" onClick={() => navigate(-1)}>
+          <ArrowLeftOutlined id="arrowleft" /> <p>Go back</p>
+        </button>
+
         <section id="camping-info-section">
           <h2>Camping Area Descriptions</h2>
         </section>
