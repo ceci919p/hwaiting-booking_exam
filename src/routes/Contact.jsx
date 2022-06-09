@@ -18,14 +18,17 @@ export default function Contact() {
           <h2>How Would you Like to Contact us?</h2>
         </section>
         <section id="contact-options">
-          <div id="nilfheim-spot" className="camping-info-spot">
-            <h3>Nilfheim</h3>
-            <p>
-              Don't want to be bothered 24/7 but also want to enjoy the wild
-              festival life then Nilfheim is for you! Far enough away from any
-              stages not to be bothered but also still within walking distance
-              you can easily enjoy the festival.{" "}
-            </p>
+          <div id="contact-options-wrapper">
+            <div id="contact-options-container">
+              <div id="contact-tel-number">
+                <h3>Tel</h3>
+                <p>+45 12 34 56 78</p>
+              </div>
+              <div id="contact-email">
+                <h3>E-mail</h3>
+                <p>Support@hwaiting.com</p>
+              </div>
+            </div>
           </div>
         </section>
       </main>

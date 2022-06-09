@@ -44,17 +44,55 @@
 }
 
 #contact-options {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1000px) auto;
+  justify-items: center;
   @include mixins.bp-medium {
-    padding-block: 5rem;
     padding-inline: 2rem;
-    display: grid;
-    grid-template-columns: auto minmax(0, 1000px) auto;
   }
 }
 
 #contact-options-wrapper {
   grid-column: 2/3;
+}
 
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+#contact-options-container {
+  text-align: center;
+
+  @include mixins.bp-medium {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    gap: 2rem;
+  }
+}
+
+#contact-tel-number {
+  border: 5px solid vars.$neonblue;
+  box-shadow: 0px 0px 6px 2px vars.$lightneonblue;
+}
+
+#contact-email {
+  border: 5px solid vars.$neonpink;
+  box-shadow: 0px 0px 6px 2px vars.$lightneonpink;
+  margin-top: 2rem;
+
+  @include mixins.bp-medium {
+    margin-top: 0;
+  }
+}
+
+#contact-email,
+#contact-tel-number {
+  width: 24rem;
+  padding-inline: 1rem;
+  padding-block: 2rem;
+
+  h3 {
+    margin-block: 1rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
 }
