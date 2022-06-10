@@ -11,10 +11,10 @@ export default function BITicket({
   freezeTickets,
 }) {
   const { setBasket } = useContext(BasketContext);
-  //const [bTicketError, setBTicketError] = useState(false);
 
-  //lyt til at vi er på campingspot
+  //-----our amount function in the basket
 
+  //removes 1 ticket every time the function runs (the minus button is clicked)
   function remove(id) {
     setBasket((old) => {
       const mapped = old.tickets.map((ticket) => {
@@ -29,6 +29,10 @@ export default function BITicket({
       return { ...old, tickets: mapped.filter((ticket) => ticket.amount > 0) };
     });
   }
+
+  //buy more function first checks if theres any tickets left
+  //if not, run alert
+  //if there is, add a ticket
 
   function buymore(id) {
     //tjekker om der er flere tickets tilbage

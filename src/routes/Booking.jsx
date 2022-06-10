@@ -96,18 +96,26 @@ export default function Booking() {
 
         //availableArr destruturing each fullCampingData's object attributes and using the object's rest operator
         //which inits an object called rest with all of the object attributes minus the ones specified before ("available" in this case)
+        //we're trying to find the number of available spots. available gives us theese numbers
 
         let availableArr = fullCampingData.map(({ available, ...rest }) => {
           return available;
         });
 
-        //WHAT DOES THIS DO???
+        //AvailableArr has a list of the numbers of the available spots.
+        //in this loop the number can only increment as long as it is lesser than availableArr.length
+        //+= means take the current value of ticketNumber and add the value stored in the array at index i.
+        //now set the state of Ticket number to a new state which is the value of ticketNumber
+        //ticketNo is the number of tickets left in the available spot (this is how we know how many tickets that can be sold)
+
         let ticketNumber = 0;
         for (let i = 0; i < availableArr.length; i++) {
           ticketNumber += availableArr[i];
         }
         setTicketNo(ticketNumber);
       }
+
+      //this call executes the code of the function
 
       getCampingData();
     },
@@ -140,9 +148,6 @@ export default function Booking() {
 
   for (let i = 0; i < persAmount.length; i++) {
     allPersInBasketNo += persAmount[i];
-
-    /*  console.log("det er mig du skal kigge på", allPersInBasketNo);
-      console.log("juhu, det er mig", tentsAmount); */
   }
 
   let fullAmountOfPers = tentsAmount * allPersInBasketNo;
