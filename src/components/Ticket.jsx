@@ -9,6 +9,8 @@ export default function Ticket(props) {
     if (props.ticketsinBasketNo > props.ticketNo) {
       alert("0 tickets left");
     } else {
+      //if there are more than one of the same ticket (id) added to the basket, copy the ticket and add it to the basket
+      //this is how we can add more than one of the same ticket type
       if (basket.tickets.find((ticket) => ticket.id === props.ticket.id)) {
         setBasket((old) => {
           const mapped = old.tickets.map((ticket) => {
@@ -25,7 +27,6 @@ export default function Ticket(props) {
           return { ...old, tickets: mapped };
         });
       } else {
-        // setBasket((oldState) => [...oldState, { ...props.ticket, amount: 1 }]);
         setBasket((oldState) => ({
           ...oldState,
           tickets: [...oldState.tickets, { ...props.ticket, amount: 1 }],
@@ -35,6 +36,7 @@ export default function Ticket(props) {
   }
 
   return (
+    //give tickets different border color depending on the ticket id
     <div
       onClick={buy}
       className="ticket"
