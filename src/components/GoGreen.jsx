@@ -3,14 +3,13 @@ import { BasketContext } from "../contexts/basket";
 
 export default function GoGreen({ green }) {
   const { basket, setBasket } = useContext(BasketContext);
-  //console.log(green);
 
-  // onclick set "added" to true and display info in basket
-  // add remove function that sets "added" to false and automatically removes from basket
+  // onclick on go-green-container sets "added" to true and then displays info in basket
+  //when true, add remove function that sets "added" to false and automatically removes from basket
+  //when false, add add function that sets "added" to true
+  //that way we can toggle the gogreen additional when it is clicked
 
   function toggleGreen(props) {
-    //console.log("clicked");
-
     if (
       (green.added === false && basket.gogreenBA.added === undefined) ||
       (green.added === false && basket.gogreenBA.added === false)

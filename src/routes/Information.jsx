@@ -11,7 +11,8 @@ export default function Step4({
   setGuestData,
   guestData,
 }) {
-  //const { basket } = useContext(BasketContext);
+  //we make useState for each input field since it changes when the user writes something in the input fields
+  //we start off by giving them empty strings (strings because that's what the value of the input fields are)
   const [fName, setFname] = useState("");
   const [lName, setLname] = useState("");
   const [email, setEmail] = useState("");
@@ -20,12 +21,18 @@ export default function Step4({
 
   const navigate = useNavigate();
 
+  //in our UI we have a form for the ticket holder and section for each guest.
+  //to get the number of sections that should be added to the UI we take our
+  //tickets in basket and removes one (the ticket holder) from the array
+
   const N = ticketsinBasketNo - 1;
   const guestsAmount = Array.from({ length: N }, (_, index) => index + 1);
 
   let id = reservationData["id"];
 
-  //preventdefault makes sure it does not refresh the page when submitting
+  //fNameChanged is when the user has written something in the firstname input field
+  //we then update our state for our firstname input field to the value written in
+  //the input field (e.target.value)
   const fNameChanged = (e) => {
     setFname(e.target.value);
   };
@@ -38,6 +45,8 @@ export default function Step4({
     setEmail(e.target.value);
   };
 
+  //this is from an installed npm module "react-select-country-input"
+  //which gives us an dropdown with all the countries that exists (in english)
   const options = useMemo(() => countryList().getData(), []);
 
   const countryChanged = (value) => {
@@ -48,22 +57,26 @@ export default function Step4({
     setCity(e.target.value);
   };
 
+  //preventdefault makes sure it does not refresh the page when submitting
   const onSubmit = (e) => {
     e.preventDefault();
 
     //if we only have 1 guest we cannot map
     if (ticketsinBasketNo === 2) {
       let oneGuest = {
+        //gets fullName by concatenating the written guest firstname with the written guest lastname
         fullName: e.target.elements.guestfirstname.value.concat(
           " ",
           e.target.elements.guestlastname.value
         ),
         email: e.target.elements.guestemail.value,
       };
+      //send oneGuest as a parameter to the setData function, which holds ticketHolderData
       setData(oneGuest);
     } else if (ticketsinBasketNo >= 3) {
-      console.log("3 tickets");
       //if more than one guest
+
+      //make array with guestFirstNames for each guest - same with guestLastName
       let guestFirstNames = [];
       e.target.elements.guestfirstname.forEach((n) => {
         guestFirstNames.push(n.value);
@@ -75,7 +88,7 @@ export default function Step4({
       });
 
       // map igennem firstnames: e=value i array, i=index i array
-      //matcher current e med e i andet array med samme index + et mellemru
+      //matcher current e med e i andet array med samme index + et mellemrum
       let guestNameData = guestFirstNames.map(
         (e, i) => e + " " + guestLastNames[i]
       );

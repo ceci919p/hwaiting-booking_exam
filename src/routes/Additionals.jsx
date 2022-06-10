@@ -3,7 +3,8 @@ import GoGreen from "../components/GoGreen";
 import TentOption from "../components/TentOption";
 
 export default function Step3(props) {
-  console.log("goGreen:", props.gogreen);
+  //update freezeTents to new state where the boolean is true
+  //which means when the next button is clicked, the function freezeTents() is called and tents are now "frozen"
 
   function freezeTents() {
     props.setFreezeTents(true);
