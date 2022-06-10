@@ -22,7 +22,9 @@ export default function Booking() {
   const [ticketHolderData, setTicketHolderData] = useState({});
   const { basket } = useContext(BasketContext);
 
-  // console.log(reservationData);
+  // console.log(reservationData); gives us undefined because it is not defined yet.
+  //we just initialize the state of reservationData here so we can pass it down to
+  //the following routes: campingspots, information, payment but also the basket
 
   //our tickets this is the data we use to display it on the bookingpage
 

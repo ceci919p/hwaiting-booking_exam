@@ -2,10 +2,9 @@ import { useContext } from "react";
 import { BasketContext } from "../contexts/basket";
 
 export default function Spot(props) {
-  //console.log(props.ticketsinBasketNo);
-
   const { basket, setBasket } = useContext(BasketContext);
 
+  //
   function choose() {
     if (props.spot.available < props.ticketsinBasketNo) {
       alert(
@@ -13,6 +12,11 @@ export default function Spot(props) {
       );
     } else {
       if (
+        //find the first element in the campingSpot (BA) array with the same ProductType as the chosen campingspot
+        //in CampingSpots.jsx line 77 we defined spot for each campingspot
+        //which means "if you find a campingspot in basket that matches the chosen campingspot" (all campingspots have the same productType),
+        //then update the state of the basket with the new chosen campingspot and add 1 in amount
+
         basket.campingSpot.find(
           (spot) => spot.productType === props.spot.productType
         )
@@ -21,9 +25,9 @@ export default function Spot(props) {
           ...oldState,
           campingSpot: [{ ...props.spot, amount: 1 }],
         }));
-        // setBasket((old) => !old);
       } else {
-        // setBasket((oldState) => ({...oldState, { ...props.spot, amount: 1 })});
+        //if there's enough availables spots and there isn't any other campingspot in basket, then add just the chosen campingspot to basket
+
         setBasket((oldState) => ({
           ...oldState,
           campingSpot: [{ ...props.spot, amount: 1 }],
