@@ -4,11 +4,6 @@ import vinylImg from "../images/vinyl.svg";
 import hwaitingSign from "../images/hwaiting2.svg";
 import Footer from "../components/Footer";
 
-/* import twitterLogo from "../images/twitter.svg";
-import fbLogo from "../images/fb.svg";
-import igLogo from "../images/ig.svg";
-import ytLogo from "../images/yt.svg"; */
-
 export default function Home(props) {
   return (
     <>

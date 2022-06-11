@@ -3,11 +3,12 @@ import { BasketContext } from "../contexts/basket";
 import { useNavigate } from "react-router-dom";
 
 import BICampingSpots from "../components/BICampingSpots";
-//import BITicket from "../components/BITicket";
-//import BITents from "../components/BITents";
 
+//new component (TicketReceipt) instead of BITicket as it had the amount option and we dont want that here
 import TicketReceipt from "../components/TicketReceipt";
+//new component (TentsReceipt) instead of additionals as it had the amount option and we dont want that here
 import TentsReceipt from "../components/TentsReceipt";
+//new component (GoGreenReciept) instead of goGreen as it had a remove option and we dont want that here
 import GoGreenReciept from "../components/GoGreenReciept";
 
 export default function Confirmation({ ticketData, fullPrice }) {
@@ -37,6 +38,7 @@ export default function Confirmation({ ticketData, fullPrice }) {
     //getting green price
     let gogreenSum;
     if (basket.gogreenBA.added === true) {
+      //in the gogreenBA array, in object, find property "price"
       gogreenSum = basket.gogreenBA["price"];
     } else {
       gogreenSum = 0;

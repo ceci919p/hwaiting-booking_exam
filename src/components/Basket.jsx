@@ -7,13 +7,10 @@ import BITents from "./BITents";
 import BIGoGreen from "./BIGoGreen";
 
 export default function Basket({
-  dataCamping,
   ticketData,
   ticketNo,
-  setTicketNo,
   ticketsinBasketNo,
   gogreen,
-  fullAmountOfPers,
   reservationData,
   freezeTickets,
   fullPrice,
@@ -24,11 +21,15 @@ export default function Basket({
   return (
     <article className="basket">
       <div>
+        {/*if reservation is not undefined then use Timer component and pass reservation data to component
+        else just return it as null*/}
+
         {reservationData !== undefined ? (
           <Timer reservationData={reservationData}></Timer>
         ) : null}
 
         <ul>
+          {/*    for each ticket in the basket array (added to basket) make BITicket component (BI = basket item)*/}
           {basket.tickets.map((ticket) => {
             return (
               <BITicket
@@ -41,9 +42,11 @@ export default function Basket({
               ></BITicket>
             );
           })}
+          {/*    use the component BICampingSpots to show campingspot in the basket  */}
           {basket.campingSpot.map((spot) => {
             return <BICampingSpots key={spot.area} {...spot}></BICampingSpots>;
           })}
+          {/*    for each add (tent) make a BITents component  */}
           {basket.tentsBA.map((add) => {
             return (
               <BITents
@@ -53,12 +56,13 @@ export default function Basket({
               ></BITents>
             );
           })}
+
+          {/*    if gogreen is added to the basket, then use component BIGoGreen else return empty tag  */}
           {basket.gogreenBA.added ? (
             <BIGoGreen green={gogreen} key={gogreen.type}></BIGoGreen>
           ) : (
             <></>
           )}
-          {/*    <BIGoGreen green={gogreen} key={gogreen.type}></BIGoGreen> */}
         </ul>
         <hr />
         <div className="totalprice">

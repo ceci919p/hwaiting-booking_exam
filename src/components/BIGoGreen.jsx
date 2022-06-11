@@ -5,6 +5,7 @@ export default function BIGoGreen({ green }) {
   const { setBasket } = useContext(BasketContext);
 
   function remove() {
+    //updates basket state that changes property 'added' to false
     setBasket((oldState) => ({
       ...oldState,
       gogreenBA: { ...green, added: false },
@@ -12,10 +13,8 @@ export default function BIGoGreen({ green }) {
   }
   return (
     <li className="basket-list">
-      {/*   <button className="basket-minus" onClick={remove}> */}
-      {/*  <p>-</p> */}
-
       <div className="amount-type-wrapper">
+        {/*  listen if trashcan is clicked, to run the function remove() */}
         <button className="trashcan" onClick={remove}>
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -4,6 +4,11 @@ import { BasketContext } from "../contexts/basket";
 export default function BITents({ type, price, amount, id, freezeTents }) {
   const { setBasket } = useContext(BasketContext);
 
+  //we do not have a buymore() in BITents since it broke our rule
+  //where you can only buy the size of prepared tents that matches the tickets bought
+  //with amount option you therefor could cheat and add more than you were allowed
+  //to solve this we simply removed the function and added a trashcan instead so you can still remove a chosen tent option
+
   function remove(id) {
     setBasket((old) => {
       const mapped = old.tentsBA.map((add) => {

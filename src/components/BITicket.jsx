@@ -16,7 +16,10 @@ export default function BITicket({
 
   //removes 1 ticket every time the function runs (the minus button is clicked)
   function remove(id) {
+    //update state of basket
     setBasket((old) => {
+      //in old basket state, find tickets array, and if theres already a ticket (same ID) in the basket that matches the new ticket added,
+      //then copy ticket and change amount by removing 1
       const mapped = old.tickets.map((ticket) => {
         if (ticket.id === id) {
           const copy = { ...ticket };
