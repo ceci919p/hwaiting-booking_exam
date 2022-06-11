@@ -26,7 +26,7 @@ export default function Booking() {
   //we just initialize the state of reservationData here so we can pass it down to
   //the following routes: campingspots, information, payment but also the basket
 
-  //our tickets this is the data we use to display it on the bookingpage
+  //our tickets, this is the data we use to display it on the bookingpage
 
   const tickets = [
     {
