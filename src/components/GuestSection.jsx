@@ -1,10 +1,12 @@
 import { useState } from "react";
 
 export default function GuestSection({ guestsAmount }) {
+  //like in information, we use useState for each input field in the form
   const [guestFirstName, setGuestFirstName] = useState("");
   const [guestLastName, setGuestLastName] = useState("");
   const [guestemail, setGuestEmail] = useState("");
 
+  //if something is written in the input field, change state of guestFirstName with the value of that
   const gFirstNameChanged = (e) => {
     setGuestFirstName(e.target.value);
   };

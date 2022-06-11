@@ -12,10 +12,14 @@ import GoGreenReciept from "../components/GoGreenReciept";
 
 export default function Confirmation({ ticketData, fullPrice }) {
   const navigateFinished = useNavigate();
+
+  //confirmation confirms the order of the tickets + campingspots (like a receipt)
+  //therefor we need everything the user has choosen (basketContext)
   const { basket, setBasket } = useContext(BasketContext);
 
   function getFullPrice() {
     //getting ticket price
+    //reduce to return the sum of all the elements in an array (tickets)
     const initialvalue = 0;
     const ticketSum = basket.tickets.reduce(
       (previousValue, currentValue) =>
@@ -24,6 +28,7 @@ export default function Confirmation({ ticketData, fullPrice }) {
     );
 
     //getting booking price
+    //reduce to return the sum of all the elements in an array (campingspot)
     const bookingSum = basket.campingSpot.reduce(
       (previousValue, currentValue) => previousValue + currentValue.price,
       initialvalue
@@ -38,7 +43,7 @@ export default function Confirmation({ ticketData, fullPrice }) {
     }
 
     //getting tent price
-
+    //reduce to return the sum of all the elements in an array (tentsBA)
     const tentSum = basket.tentsBA.reduce(
       (previousValue, currentValue) =>
         previousValue + currentValue.amount * currentValue.price,
@@ -46,12 +51,12 @@ export default function Confirmation({ ticketData, fullPrice }) {
     );
 
     //get full basket price
+    //add all the values and get the full basket price
     return ticketSum + bookingSum + gogreenSum + tentSum;
   }
 
   function transactionComplete() {
-    console.log("oops");
-
+    // empty / reset basket --> empty all arrays + object
     setBasket((oldState) => ({
       oldState,
       tickets: [],
@@ -60,6 +65,7 @@ export default function Confirmation({ ticketData, fullPrice }) {
       gogreenBA: {},
     }));
 
+    //do not navigate to another route
     navigateFinished("/");
   }
 

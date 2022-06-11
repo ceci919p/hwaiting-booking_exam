@@ -12,7 +12,7 @@ export default function Step4({
   guestData,
 }) {
   //we make useState for each input field since it changes when the user writes something in the input fields
-  //we start off by giving them empty strings (strings because that's what the value of the input fields are)
+  //we start off by giving them empty strings as current state
   const [fName, setFname] = useState("");
   const [lName, setLname] = useState("");
   const [email, setEmail] = useState("");
@@ -21,13 +21,15 @@ export default function Step4({
 
   const navigate = useNavigate();
 
-  //in our UI we have a form for the ticket holder and section for each guest.
+  //in our UI we have a form for the ticket holder and a section for each guest.
   //to get the number of sections that should be added to the UI we take our
-  //tickets in basket and removes one (the ticket holder) from the array
+  //tickets in the basket and removes one (the ticket holder) from the array
 
   const N = ticketsinBasketNo - 1;
   const guestsAmount = Array.from({ length: N }, (_, index) => index + 1);
 
+  //our bookingID - which we got from our PUT request in campingSpots.jsx (reservationData)
+  //which is also passed as a prop from booking
   let id = reservationData["id"];
 
   //fNameChanged is when the user has written something in the firstname input field
@@ -57,6 +59,8 @@ export default function Step4({
     setCity(e.target.value);
   };
 
+  //--------after form is submitted
+
   //preventdefault makes sure it does not refresh the page when submitting
   const onSubmit = (e) => {
     e.preventDefault();
@@ -76,12 +80,13 @@ export default function Step4({
     } else if (ticketsinBasketNo >= 3) {
       //if more than one guest
 
-      //make array with guestFirstNames for each guest - same with guestLastName
+      //make array with guestFirstNames for each guest
       let guestFirstNames = [];
       e.target.elements.guestfirstname.forEach((n) => {
         guestFirstNames.push(n.value);
       });
 
+      //make array with guestLastNames for each guest
       let guestLastNames = [];
       e.target.elements.guestlastname.forEach((n) => {
         guestLastNames.push(n.value);
@@ -89,15 +94,23 @@ export default function Step4({
 
       // map igennem firstnames: e=value i array, i=index i array
       //matcher current e med e i andet array med samme index + et mellemrum
+      //that way we get get the correct fullname (firstname + lastname) for each guest
       let guestNameData = guestFirstNames.map(
         (e, i) => e + " " + guestLastNames[i]
       );
 
+      console.log("guestNameDATA:", guestNameData);
+
+      //for each input (guest email typed in the input field)
+      //push it (add) to array guestEmails
       let guestEmails = [];
       e.target.elements.guestemail.forEach((e) => {
         guestEmails.push(e.value);
       });
 
+      //fullGuestData is an array with objects (guests) inside.
+      //fullName holds the guest firstname and lastname (line 96) we say [index] because we only want 1 fullname at a time
+      //email is the value of whats written in the input field
       let fullGuestData = guestEmails.map((email, index) => {
         return {
           fullName: guestNameData[index],
@@ -105,10 +118,19 @@ export default function Step4({
         };
       });
 
+      console.log("FULLguestNameDATA:", fullGuestData);
+
+      //send guestdata to setData to update ticketholderData
       setData(fullGuestData);
     } else if (ticketsinBasketNo === 1) {
+      //no guests, calls setData function without guest info
       setData();
     }
+
+    //setData is a function to send data from guests to setTicketHolderData which updates state of ticketHolderData
+    //we get an object with properties for each information in the form
+    //guests is an array with objects in it for each guest
+    //bookingID did we get from our PUT request in CampingSpots.jsx
 
     function setData(data) {
       setTicketHolderData({
@@ -122,8 +144,11 @@ export default function Step4({
       });
     }
 
+    //go to next page (payment)
     navigate("/booking/payment");
   };
+
+  //---------form validation (select country)
   const selectstyles = {
     control: (styles) => ({
       ...styles,
@@ -138,6 +163,7 @@ export default function Step4({
       };
     },
   };
+
   return (
     <section id="step4-section" className="steps">
       <div id="step4-wrapper">
@@ -219,7 +245,8 @@ export default function Step4({
                 ></input>
               </div>
             </section>
-            {/* show additional guest info if theres more than one ticket selected. The number of additional guest number depends on the amount of tickets selcted */}
+            {/* show a section (GuestSection component) which is a form for guest info if theres more than one ticket selected. 
+            The number of guest info sections depends on the amount of tickets selcted */}
             {guestsAmount.length >= 1
               ? guestsAmount.map((a) => (
                   <GuestSection guestsAmount={guestsAmount} />

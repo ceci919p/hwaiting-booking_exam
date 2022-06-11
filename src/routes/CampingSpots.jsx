@@ -37,7 +37,7 @@ export default function Step2(props) {
       .then((response) => {
         return response.json();
       })
-      .then((data) => props.setReservationData(data)) //update state of reservationData with the data
+      .then((data) => props.setReservationData(data)) //update state of reservationData with the data => here we get bookingID!
       .catch((err) => console.error(err));
   }
 
