@@ -114,7 +114,7 @@ export default function Booking() {
         for (let i = 0; i < availableArr.length; i++) {
           ticketNumber += availableArr[i];
         }
-        setTicketNo(ticketNumber);
+        setTicketNo(ticketNumber); //takes a campingspot and its available spots and sums it up for all campingspots (full amount of available tickets)
       }
 
       //this call executes the code of the function

@@ -42,7 +42,10 @@ export default function Ticket(props) {
       className="ticket"
       style={
         props.ticket.id === 1
-          ? { border: "5px solid #20E3E3", boxShadow: "0px 0px 10px #5AFFFF" }
+          ? {
+              border: "5px solid #20E3E3",
+              boxShadow: "0px 0px 10px #5AFFFF",
+            }
           : { border: "5px solid #FB3CFF", boxShadow: "0px 0px 10px #FC61FF" }
       }
     >
@@ -51,7 +54,22 @@ export default function Ticket(props) {
       <div className="ticket-text">
         <h3>{props.ticket.type}</h3>
 
-        <p>{props.ticket.price} DKK</p>
+        <div className="ticket-perks">
+          {props.ticket.id === 1 ? (
+            <ul>
+              <li>Access to all concerts</li>
+              <li>Access to campsite when festival begins</li>
+            </ul>
+          ) : (
+            <ul>
+              <li>Access to all concerts</li>
+              <li>VIP section at concerts</li>
+              <li>Early access to campsite</li>
+            </ul>
+          )}
+        </div>
+
+        <p id="ticket_price">{props.ticket.price} DKK</p>
       </div>
     </div>
   );
