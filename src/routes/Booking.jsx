@@ -126,6 +126,8 @@ export default function Booking() {
     ]
   );
 
+  //-----------calculating values wee need to check if number of persons tents exceeds number of tickets---------------------
+
   //finding number of tickets in basket
   let ticketAmount = basket.tickets.map(({ amount, ...rest }) => {
     return amount;
@@ -142,6 +144,29 @@ export default function Booking() {
     return amount;
   });
 
+  //get all 2 persons tents clicked (added to basket)
+  let allTwoPersonsTents = 0;
+  allTwoPersonsTents += tentsAmount[0];
+
+  //check if its true and its true if it carries a value
+  if (allTwoPersonsTents) {
+  } else {
+    //if not a number, undefined etc give it a value number 0
+    allTwoPersonsTents = 0;
+  }
+
+  //get all 3 persons tents clicked (added to basket)
+  let allThreePersonsTents = 0;
+  allThreePersonsTents += tentsAmount[1];
+
+  if (allThreePersonsTents) {
+  } else {
+    allThreePersonsTents = 0;
+  }
+
+  //now get the sum of the 2 different kinds of tents
+  let allTentAmount = allTwoPersonsTents + allThreePersonsTents;
+
   //check how many persons that tent can fit so we can compare it to number of tickets
   let persAmount = basket.tentsBA.map(({ pers, ...rest }) => {
     return pers;
@@ -152,7 +177,9 @@ export default function Booking() {
     allPersInBasketNo += persAmount[i];
   }
 
-  let fullAmountOfPers = tentsAmount * allPersInBasketNo;
+  //take values of allTentAmount and multiply it with pers in basket
+  //now we have the right value to compare tickets with pers tents
+  let fullAmountOfPers = allTentAmount * allPersInBasketNo;
 
   //---- full amount in basket calculation-----
 
