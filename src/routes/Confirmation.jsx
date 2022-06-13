@@ -83,6 +83,7 @@ export default function Confirmation({ ticketData, fullPrice }) {
         </div>
         <div id="background-color">
           <h3>Your order: </h3>
+
           <ul>
             {basket.tickets.map((ticket) => {
               return (
